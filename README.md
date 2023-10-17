@@ -1,2 +1,2 @@
 # tech-hub-website
-Repositorio del proyecto de control de proyectos
+Repositorio del frontend delproyecto de control de proyectos
