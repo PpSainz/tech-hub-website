@@ -3,3 +3,51 @@
     display: flex;
     padding: 15px;
 }
+
+.navbar-toggler {
+    margin: 5px;
+    padding: 10px;
+}
+
+.offcanvas-body {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.btn-close {
+    right: 20px;
+    position: absolute;
+    top: 20px;
+}
+
+.offcanvas,
+.dropdown-menu {
+    background-color: #051319;
+}
+
+#logotipo-offcanvas {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+
+    img {
+        width: 60%;
+    }
+}
+
+.nav-option {
+    display: flex;
+    align-items: center;
+    font-size: 1.65rem !important;
+    font-weight: 600;
+    gap: 15px;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem !important;
+    font-weight: 400;
+    gap: 10px;
+}
