@@ -31,9 +31,27 @@ footer {
             transition: background-color 0.4s ease;
         }
 
-        a:hover {
-            background-color: #393939;
+        #facebook:hover {
+            background-color: #0866FF;
         }
+
+        #instagram:hover {
+            background-color: #E1306C;
+        }
+        
+        #twitterx:hover {
+            background-color: #1B1E1F;
+        
+        }
+
+        #github:hover {
+            background-color: #6e5494;
+        }
+
+        #linkedin:hover {
+            background-color: #0e76a8;
+        }
+        
     }
 
     .social {
