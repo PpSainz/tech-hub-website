@@ -1,0 +1,84 @@
+<nav class="navbar sticky-top" style="border-radius: 10px; background-color: #051319;" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a id="logotipo" class="navbar-brand" href="#">
+            <img src="../../../assets/logo/isotipo.svg" alt="Logo" width="30" height="24"
+                class="d-inline-block align-text-top">
+            <img src="../../../assets/logo/Logo.svg" alt="Logo" style="width: max-content;" width="30" height="24"
+                class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div id="logotipo-offcanvas">
+                <img src="../../../assets/logo/logotipo.svg" alt="">
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link nav-option" aria-current="page" href="#">
+                            <img src="../../../assets/icons/home.svg" alt="">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-option" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="../../../assets/icons/monitor.svg" alt="">
+                            TechAssembler
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">
+                                <img src="../../../assets/icons/smile.svg" alt="">
+                                Noob version
+                            </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                <img src="../../../assets/icons/hard-drive.svg" alt="">
+                                Pro version
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-option" href="#">
+                            <img src="../../../assets/icons/shopping-cart.svg" alt="">
+                            Ofertas
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-option" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="../../../assets/icons/book-open.svg" alt="">
+                            Aprende
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">
+                                <img src="../../../assets/icons/cpu.svg" alt="">
+                                Componentes
+                            </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                <img src="../../../assets/icons/tool.svg" alt="">
+                                ¿Comó armar tu pc?
+                            </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                <img src="../../../assets/icons/headphones.svg" alt="">
+                                Accesorios
+                            </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                <img src="../../../assets/icons/code.svg" alt="">
+                                Software
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
