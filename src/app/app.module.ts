@@ -5,12 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from '../pages/auth/login/login.component';
+import { RecoverComponent } from '../pages/auth/recover/recover.component';
+import { RegisterComponent } from '../pages/auth/register/register.component';
+import { HomeComponent } from '../pages/home/home.component';
+import { AssemblerComponent } from './assembler/assembler.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    RecoverComponent,
+    RegisterComponent,
+    HomeComponent,
+    AssemblerComponent
   ],
   imports: [
     BrowserModule,
