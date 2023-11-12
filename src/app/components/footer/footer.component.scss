@@ -1,0 +1,105 @@
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: #051319;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    justify-items: start;
+
+    #techhub-logo {
+        height: auto;
+        width: 30%;
+        align-self: center;
+        justify-self: center;
+        cursor: pointer;
+    }
+
+    .options_footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+
+        a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            transition: background-color 0.4s ease;
+        }
+
+        #facebook:hover {
+            background-color: #0866FF;
+        }
+
+        #instagram:hover {
+            background-color: #E1306C;
+        }
+        
+        #twitterx:hover {
+            background-color: #1B1E1F;
+        
+        }
+
+        #github:hover {
+            background-color: #6e5494;
+        }
+
+        #linkedin:hover {
+            background-color: #0e76a8;
+        }
+        
+    }
+
+    .social {
+        display: flex;
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.5rem !important;
+        }
+    }
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bd-violet-bg);
+    --bs-tooltip-color: var(--bs-white);
+}
+
+@media screen and (min-width: 750px) and (max-width: 1024px) {
+    .options {
+        font-size: 1.2rem !important;
+    }
+
+    #techhub-logo {
+        width: 35% !important;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 740px) {
+    footer {
+        height: 20% !important;
+        grid-template-columns: 1fr 0fr 1fr;
+
+        .options {
+            display: none;
+        }
+
+        #techhub-logo {
+            width: 60% !important;
+        }
+    }
+}
