@@ -1,0 +1,102 @@
+#background {
+    background-image: linear-gradient(to top, rgba(26, 29, 31, 0.99) 50%, rgba(26, 29, 31, 0.5) 100%), url('../../../assets/background.jpeg');
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.main_container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        display: flex;
+        position: relative;
+        width: 80%;
+        height: max-content;
+        margin: 50px;
+        color: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        border-radius: 10px;
+        background: rgba(5, 19, 26, 0.99);
+
+        h1 {
+            margin: 15px;
+            letter-spacing: 4px;
+            font-weight: 700;
+        }
+
+        .cards {
+            display: flex;
+            width: 90%;
+            height: max-content;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0px;
+
+            .question {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .view {
+                width: 60%;
+                display: flex;
+                gap: 50px;
+                align-items: center;
+                justify-content: space-between;
+
+                .view_info {
+                    display: flex;
+                    width: 60%;
+                    flex-wrap: wrap;
+                    gap: 22px;
+
+                    p {
+                        margin: 0px;
+                    }
+
+                    .two_cols {
+                        display: flex;
+                        gap: 50px;
+                    }
+                }
+
+                .img_container {
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 10px;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            .input_color {
+                background: rgba(5, 19, 26, 0.99);
+                color: white;
+            }
+        }
+    }
+}
+
+.exit {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
