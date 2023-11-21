@@ -1,0 +1,406 @@
+<div id="background"></div>
+<main class="main_container">
+    <div class="container">
+        <h1>CONFIGURA TU PC</h1>
+        <div class="cards">
+            <div class="question">
+                <h4>Marca del procesador</h4>
+                <select [(ngModel)]="cpu_brand.ID" name="brand" class="form-select form-select-lg input_color mb-3"
+                    aria-label="Large select example" (change)="brand_cpu()">
+                    <option value="1">Intel</option>
+                    <option value="2">AMD</option>
+                </select>
+            </div>
+            <div class="view">
+                <div class="view_info">
+                    <label for="brand">
+                        <p>Marca del procesador</p>
+                        <h5>{{cpu_brand.name}}</h5>
+                    </label>
+                </div>
+                <div class="img_container">
+                    <img src="{{cpu_brand.ID? cpu_brand.ImageURL : '../../../assets/icons/image.svg'}}" alt="">
+                </div>
+            </div>
+        </div>
+        <hr *ngIf="cpu_brand.ID" style="border: 1px solid white; width: 95%;">
+        <div *ngIf="cpu_brand.ID" class="cards">
+            <div class="question">
+                <h4>Procesador</h4>
+                <select [(ngModel)]="cpu_selct.ID" class="form-select form-select-lg input_color mb-3"
+                    aria-label="Large select example" (change)="selectProcessor()">
+                    <option *ngFor="let cpu of cpu_list" value="{{cpu.ID}}">{{cpu.ModelName}}</option>
+                </select>
+            </div>
+            <div class="view">
+                <div class="view_info">
+                    <label for="model">
+                        <p>Modelo</p>
+                        <h5>{{cpu_selct.ModelName}}</h5>
+                    </label>
+                    <label for="speed">
+                        <p>Velocidad (GHz)</p>
+                        <h5>{{cpu_selct.SpeedGHz}} GHz</h5>
+                    </label>
+                    <label for="cores">
+                        <p>Cores</p>
+                        <h5>{{cpu_selct.Cores}}</h5>
+                    </label>
+                    <label for="threads">
+                        <p>Hilos</p>
+                        <h5>{{cpu_selct.Threads}}</h5>
+                    </label>
+                    <label for="socket">
+                        <p>Socket</p>
+                        <h5>{{cpu_selct.SocketType}}</h5>
+                    </label>
+                    <label for="gpu">
+                        <p>Graficos integrados</p>
+                        <h5>{{cpu_selct.IntegratedGraphics}}</h5>
+                    </label>
+                </div>
+                <div class="img_container">
+                    <img src="{{cpu_selct.ID? cpu_selct.ImageURL : '../../../assets/icons/image.svg'}}" alt="">
+                </div>
+            </div>
+        </div>
+        <hr *ngIf="cpu_selct.ID" style="border: 1px solid white; width: 95%;">
+        <div *ngIf="cpu_selct.ID" class="cards">
+            <div class="question">
+                <h4>Tarjeta gráfica</h4>
+                <select [(ngModel)]="gpu_select.ID" class="form-select form-select-lg input_color mb-3"
+                    aria-label="Large select example" (change)="setGpu()">
+                    <option *ngFor="let gpu of gpu_list" value="{{gpu.ID}}">{{gpu.ModelName}}</option>
+                </select>
+            </div>
+            <div class="view">
+                <div class="view_info">
+                    <label for="brand">
+                        <p>Marca</p>
+                        <h5>{{gpu_select.Brand}}</h5>
+                    </label>
+                    <label for="name">
+                        <p>Modelo</p>
+                        <h5>{{gpu_select.ModelName}}</h5>
+                    </label>
+                    <label for="memory">
+                        <p>Memoria (GB)</p>
+                        <h5>{{gpu_select.MemoryGB}} GB</h5>
+                    </label>
+                    <label for="ports">
+                        <p>Puertos</p>
+                        <h5>{{gpu_select.Ports}}</h5>
+                    </label>
+                    <label for="interface">
+                        <p>Interfaz</p>
+                        <h5>{{gpu_select.Interface}}</h5>
+                    </label>
+                    <label for="speed">
+                        <p>Velocidad (GHz)</p>
+                        <h5>{{gpu_select.SpeedGHz}} GHz</h5>
+                    </label>
+                    <label for="bost">
+                        <p>Boost (GHz)</p>
+                        <h5>{{gpu_select.BoostGHz}} GHz</h5>
+                    </label>
+                </div>
+                <div class="img_container">
+                    <img src="{{gpu_select.ID? gpu_select.ImageURL : '../../../assets/icons/image.svg'}}" alt="">
+                </div>
+            </div>
+        </div>
+        <hr *ngIf="gpu_select.ID" style="border: 1px solid white; width: 95%;">
+        <div *ngIf="gpu_select.ID" class="cards">
+            <div class="question">
+                <h4>Tarjeta madre</h4>
+                <select [(ngModel)]="mobo_select.ID" class="form-select form-select-lg input_color mb-3"
+                    aria-label="Large select example" (change)="setMobo()">
+                    <option *ngFor="let mobo of mobo_list" value="{{mobo.ID}}">{{mobo.ModelName}}</option>
+                </select>
+            </div>
+            <div class="view">
+                <div class="view_info">
+                    <label for="brand">
+                        <p>Marca</p>
+                        <h5>{{mobo_select.Brand}}</h5>
+                    </label>
+                    <label for="name">
+                        <p>Modelo</p>
+                        <h5>{{mobo_select.ModelName}}</h5>
+                    </label>
+                    <label for="memory">
+                        <p>Factor de forma</p>
+                        <h5>{{mobo_select.FormFactor}} GB</h5>
+                    </label>
+                    <label for="socket">
+                        <p>Socket</p>
+                        <h5>{{mobo_select.SocketType}}</h5>
+                    </label>
+                    <label for="ranuras">
+                        <p>Ranuras para RAM</p>
+                        <h5>{{mobo_select.RAMSlots}}</h5>
+                    </label>
+                    <label for="MaxMemory">
+                        <p>RAM Maxima</p>
+                        <h5>{{mobo_select.MaxMemoryGB}} GHz</h5>
+                    </label>
+                    <label for="PCIeSlots">
+                        <p>Puertos PCIe</p>
+                        <h5>{{mobo_select.PCIeSlots}} GHz</h5>
+                    </label>
+                    <label for="PCIeSlots">
+                        <p>Puertos USB</p>
+                        <h5>{{mobo_select.USBPorts}} GHz</h5>
+                    </label>
+                    <label for="PCIeSlots">
+                        <p>Puertos SATA</p>
+                        <h5>{{mobo_select.SATAConnectors}} GHz</h5>
+                    </label>
+                    <label for="PCIeSlots">
+                        <p>Red</p>
+                        <h5>{{mobo_select.Networking}} GHz</h5>
+                    </label>
+                </div>
+                <div class="img_container">
+                    <img src="{{mobo_select.ID? mobo_select.ImageURL : '../../../assets/icons/image.svg'}}" alt="">
+                </div>
+            </div>
+        </div>
+        <hr *ngIf="mobo_select.ID" style="border: 1px solid white; width: 95%;">
+        <div *ngIf="mobo_select.ID" class="cards">
+            <div class="question">
+                <h4>RAM</h4>
+                <select [(ngModel)]="ram_select.ID" class="form-select form-select-lg input_color mb-3"
+                    aria-label="Large select example" (change)="setRAM()">
+                    <option *ngFor="let ram of ram_list" value="{{ram.ID}}">{{ram.ModelName}}</option>
+                </select>
+            </div>
+            <div class="view">
+                <div class="view_info">
+                    <label for="brand">
+                        <p>Marca</p>
+                        <h5>{{ram_select.Brand}}</h5>
+                    </label>
+                    <label for="name">
+                        <p>Modelo</p>
+                        <h5>{{ram_select.ModelName}}</h5>
+                    </label>
+                    <label for="memory">
+                        <p>Capacidad (GB)</p>
+                        <h5>{{ram_select.CapacityGB}} GB</h5>
+                    </label>
+                    <label for="Type">
+                        <p>Tipo</p>
+                        <h5>{{ram_select.Type}}</h5>
+                    </label>
+                    <label for="speed">
+                        <p>Velocidad (GHz)</p>
+                        <h5>{{ram_select.SpeedGHz}} GHz</h5>
+                    </label>
+                    <label for="Modulos">
+                        <p>Modulos</p>
+                        <h5>{{ram_select.Modules}}</h5>
+                    </label>
+                </div>
+                <div class="img_container">
+                    <img src="{{ram_select.ID? ram_select.ImageURL : '../../../assets/icons/image.svg'}}" alt="">
+                </div>
+            </div>
+        </div>
+        <hr *ngIf="ram_select.ID" style="border: 1px solid white; width: 95%;">
+        <div *ngIf="ram_select.ID" class="cards">
+            <div class="question">
+                <h4>Almacenamiento</h4>
+                <select [(ngModel)]="rom_select.ID" class="form-select form-select-lg input_color mb-3"
+                    aria-label="Large select example" (change)="setStorage()">
+                    <option *ngFor="let rom of rom_list" value="{{rom.ID}}">{{rom.ModelName}}</option>
+                </select>
+            </div>
+            <div class="view">
+                <div class="view_info">
+                    <label for="brand">
+                        <p>Marca</p>
+                        <h5>{{rom_select.Brand}}</h5>
+                    </label>
+                    <label for="name">
+                        <p>Modelo</p>
+                        <h5>{{rom_select.ModelName}}</h5>
+                    </label>
+                    <label for="memory">
+                        <p>Capacidad (GB)</p>
+                        <h5>{{rom_select.CapacityGB}} GB</h5>
+                    </label>
+                    <label for="Type">
+                        <p>Tipo</p>
+                        <h5>{{rom_select.Type}}</h5>
+                    </label>
+                    <label for="speed">
+                        <p>Interfaz</p>
+                        <h5>{{rom_select.Interface}} GHz</h5>
+                    </label>
+                </div>
+                <div class="img_container">
+                    <img src="{{rom_select.ID? rom_select.ImageURL : '../../../assets/icons/image.svg'}}" alt="">
+                </div>
+            </div>
+        </div>
+        <hr *ngIf="rom_select.ID" style="border: 1px solid white; width: 95%;">
+        <div *ngIf="rom_select.ID" class="cards">
+            <div class="question">
+                <h4>Sistema de infriamiento</h4>
+                <select [(ngModel)]="cool_select.ID" class="form-select form-select-lg input_color mb-3"
+                    aria-label="Large select example" (change)="setCool()">
+                    <option *ngFor="let cool of cool_list" value="{{cool.ID}}">{{cool.ModelName}}</option>
+                </select>
+            </div>
+            <div class="view">
+                <div class="view_info">
+                    <label for="brand">
+                        <p>Marca</p>
+                        <h5>{{cool_select.Brand}}</h5>
+                    </label>
+                    <label for="name">
+                        <p>Modelo</p>
+                        <h5>{{cool_select.ModelName}}</h5>
+                    </label>
+                    <label for="Type">
+                        <p>Tipo</p>
+                        <h5>{{cool_select.Type}}</h5>
+                    </label>
+                    <label for="RadiatorSize">
+                        <p>Tamaño del radiador/p>
+                        <h5>{{cool_select.RadiatorSize}} cm</h5>
+                    </label>
+                    <label for="FanSize">
+                        <p>Tamaño del ventilador/p>
+                        <h5>{{cool_select.FanSize}} cm</h5>
+                    </label>
+                    <label for="PumpIncluded">
+                        <p>Bonba incluida/p>
+                        <h5>{{cool_select.PumpIncluded}}</h5>
+                    </label>
+                </div>
+                <div class="img_container">
+                    <img src="{{cool_select.ID? cool_select.ImageURL : '../../../assets/icons/image.svg'}}" alt="">
+                </div>
+            </div>
+        </div>
+        <hr *ngIf="cool_select.ID" style="border: 1px solid white; width: 95%;">
+        <div *ngIf="cool_select.ID" class="cards">
+            <div class="question">
+                <h4>Fuente de poder</h4>
+                <select [(ngModel)]="power_select.ID" class="form-select form-select-lg input_color mb-3"
+                    aria-label="Large select example" (change)="setPower()">
+                    <option *ngFor="let power of power_list" value="{{power.ID}}">{{power.ModelName}}</option>
+                </select>
+            </div>
+            <div class="view">
+                <div class="view_info">
+                    <label for="brand">
+                        <p>Marca</p>
+                        <h5>{{power_select.Brand}}</h5>
+                    </label>
+                    <label for="name">
+                        <p>Modelo</p>
+                        <h5>{{power_select.ModelName}}</h5>
+                    </label>
+                    <label for="Wattage">
+                        <p>Watts</p>
+                        <h5>{{power_select.Wattage}}</h5>
+                    </label>
+                    <label for="Certification">
+                        <p>Certificación</p>
+                        <h5>{{power_select.Certification}} cm</h5>
+                    </label>
+                </div>
+                <div class="img_container">
+                    <img src="{{power_select.ID? power_select.ImageURL : '../../../assets/icons/image.svg'}}" alt="">
+                </div>
+            </div>
+        </div>
+        <hr *ngIf="power_select.ID" style="border: 1px solid white; width: 95%;">
+        <div *ngIf="power_select.ID" class="cards">
+            <div class="question">
+                <h4>Carcasa</h4>
+                <select [(ngModel)]="cases_select.ID" class="form-select form-select-lg input_color mb-3"
+                    aria-label="Large select example" (change)="setCases()">
+                    <option *ngFor="let cases of cases_list" value="{{cases.ID}}">{{cases.ModelName}}</option>
+                </select>
+            </div>
+            <div class="view">
+                <div class="view_info">
+                    <label for="brand">
+                        <p>Marca</p>
+                        <h5>{{cases_select.Brand}}</h5>
+                    </label>
+                    <label for="name">
+                        <p>Modelo</p>
+                        <h5>{{cases_select.ModelName}}</h5>
+                    </label>
+                    <label for="FormFactor">
+                        <p>Factor de forma</p>
+                        <h5>{{cases_select.FormFactor}}</h5>
+                    </label>
+                    <label for="NumDriveBays">
+                        <p>Vías de puertos</p>
+                        <h5>{{cases_select.NumDriveBays}}</h5>
+                    </label>
+                </div>
+                <div class="img_container">
+                    <img src="{{cases_select.ID? cases_select.ImageURL : '../../../assets/icons/image.svg'}}" alt="">
+                </div>
+            </div>
+        </div>
+        <hr *ngIf="cases_select.ID" style="border: 1px solid white; width: 95%;">
+        <div *ngIf="cases_select.ID" class="cards">
+            <div class="question">
+                <h4>Sistema operativo</h4>
+                <select [(ngModel)]="os_select.ID" class="form-select form-select-lg input_color mb-3"
+                    aria-label="Large select example" (change)="setOS()">
+                    <option *ngFor="let os of os_list" value="{{os.ID}}">{{os.Name}} {{os.Version}}</option>
+                </select>
+            </div>
+            <div class="view">
+                <div class="view_info">
+                    <label for="brand">
+                        <p>Marca</p>
+                        <h5>{{os_select.Brand}}</h5>
+                    </label>
+                    <label for="name">
+                        <p>Nombre</p>
+                        <h5>{{os_select.Name}}</h5>
+                    </label>
+                    <label for="Version">
+                        <p>Version</p>
+                        <h5>{{os_select.Version}}</h5>
+                    </label>
+                    <label for="Description">
+                        <p>Descripción</p>
+                        <h5>{{os_select.Description}}</h5>
+                    </label>
+                </div>
+                <div class="img_container">
+                    <img src="{{os_select.ID? os_select.ImageURL : '../../../assets/icons/image.svg'}}" alt="">
+                </div>
+            </div>
+        </div>
+        <hr *ngIf="os_select.ID" style="border: 1px solid white; width: 95%;">
+        <div *ngIf="os_select.ID" class="cards">
+            <div class="question">
+                <label for="">
+                    <h4>¿Como se llama tu ensamble?</h4>
+                    <input [(ngModel)]="pc_name" type="text" id="inputPassword5"
+                        class="form-control form-control-lg input_color mb-3" aria-describedby="passwordHelpBlock">
+                    <p>(El nombre es opcional)</p>
+                </label>
+            </div>
+            <div class="view">
+                <button type="button" (click)="savePC()" class="btn btn-lg btn-outline-primary">Crear</button>
+            </div>
+        </div>
+        <button *ngIf="cpu_brand.ID" (click)="deleteValues()" type="button"
+            class="btn btn-outline-danger btn-lg mb-3">Limpiar creación</button>
+        <button routerLink="/" (click)="deleteValues()" type="button"
+            class="btn btn-outline-danger btn-lg mb-3 exit">Regresar</button>
+    </div>
+</main>
