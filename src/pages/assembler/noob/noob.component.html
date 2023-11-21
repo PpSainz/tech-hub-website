@@ -1,1 +1,57 @@
-<p>noob works!</p>
+<div id="background"></div>
+<main class="main_container">
+    <div class="container">
+        <button routerLink="/" type="button" class="btn btn-outline-danger btn-lg mb-3 exit">Regresar</button>
+        <label for="" class="m-3">
+            <h4 class="m-3">¿Para que necesitas tu computadora?</h4>
+            <input [(ngModel)]="recomendation_select.Tag" type="text"
+                class="form-control form-control-lg input_color mb-3" list="recomendation">
+            <datalist id="recomendation">
+                <option *ngFor="let pc of recomendation_list" value="{{pc.Tag}}">{{pc.Tag}}</option>
+            </datalist>
+            <p>(Como por ejemplo, arquitectura, juegos, etc.)</p>
+        </label>
+        <button type="button" (click)="selectPC()" class="btn btn-lg btn-outline-primary m-3">Buscar</button>
+        <div *ngFor="let pc of recomendation_select" class="info m-4">
+            <hr style="border: 1px solid white; width: 95%;">
+            <p class="mb-1">La computadora es recomendada para</p>
+            <h4>{{pc.Tag}}</h4>
+            <h6>Caracteristicas</h6>
+            <div class="view_info">
+                <label for="">
+                    <small>Procesador</small>
+                    <p>{{pc.Computer.Processor.ModelName}}</p>
+                </label>
+                <label for="">
+                    <small>Tarjeta madre</small>
+                    <p>{{pc.Computer.MotherBoard.ModelName}}</p>
+                </label>
+                <label for="">
+                    <small>Tarjeta gráfica</small>
+                    <p>{{pc.Computer.GraphicsCard.ModelName}}</p>
+                </label>
+                <label for="">
+                    <small>RAM</small>
+                    <p>{{pc.Computer.RamMemorie.ModelName}} {{pc.Computer.RamMemorie.CapacityGB}}GB</p>
+                </label>
+                <label for="">
+                    <small>Almacenamiento</small>
+                    <p>{{pc.Computer.Storage.ModelName}} {{pc.Computer.Storage.CapacityGB}}GB</p>
+                </label>
+                <label for="">
+                    <small>Fuente de poder</small>
+                    <p>{{pc.Computer.PowerSupply.ModelName}} {{pc.Computer.PowerSupply.Wattage}}Watts</p>
+                </label>
+                <label for="">
+                    <small>Sistema de enfriamiento</small>
+                    <p>{{pc.Computer.CoolingSystem.ModelName}}</p>
+                </label>
+                <label for="">
+                    <small>Sistema Operativo</small>
+                    <p>{{pc.Computer.OS.Name}} {{pc.Computer.OS.Version}}</p>
+                </label>
+            </div>
+        </div>
+    </div>
+</main>
+//
